@@ -1,5 +1,10 @@
 var currentScene;
 var getGrass;
+var song;
+
+function preload(){
+    song = loadsound('sound/bensound-french.mp3');
+}
 function setup(){
     createCanvas(400, 400);
     getGrass = loadImage("grass.png");
@@ -111,6 +116,7 @@ var page = "menu";
 draw = function() {
     if(mouseIsPressed && mouseX > 155 && mouseX < 255 && mouseY > 150 && mouseY < 200) {
         page = "StartGame";
+        song.play();
        
     }
     drawBackground();
